@@ -1,6 +1,8 @@
 package com.springboot.hello.controller;
 
 import com.springboot.hello.dto.MemberDto;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Struct;
@@ -10,7 +12,6 @@ import java.util.Map;
 @RequestMapping("/api/v1/get-api")
 public class GetController {
 
-    //http://localhost:8080/api/v1/get-api/hello
     //RequestMapping을 사용한 메서드 구현
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String GetHello() {
@@ -36,10 +37,11 @@ public class GetController {
     }
 
     //@RequestParam을 활용한 GET 메서드 구현
+    @Operation(summary = "GET 메서드 예제", description = "@RequestParam을 활용한 GET Method")
     @GetMapping(value = "/request1")
-    public String getRequetParam1(@RequestParam("name") String name
-                                ,@RequestParam("email") String email
-                                ,@RequestParam("organization") String organization) {
+    public String getRequetParam1(@Parameter(description = "이름", required = true) @RequestParam("name") String name
+                                ,@Parameter(description = "이메일", required = true) @RequestParam("email") String email
+                                ,@Parameter(description = "회사", required = true) @RequestParam("organization") String organization) {
         return name + " " + email + " " + organization;
     }
 

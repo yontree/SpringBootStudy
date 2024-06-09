@@ -1,5 +1,6 @@
 package com.springboot.hello.controller;
 
+import com.springboot.hello.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -24,4 +25,11 @@ public class PostController {
         });
         return sb.toString();
     }
+
+    //DTO 객체를 활용한 POST API 구현
+    @PostMapping(value = "/request1")
+    public String getRequestParam1(@RequestBody String memberDto) {
+        return memberDto.toString();
+    }
+
 }
