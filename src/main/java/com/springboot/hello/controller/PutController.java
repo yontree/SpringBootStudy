@@ -1,13 +1,13 @@
 package com.springboot.hello.controller;
 
-import com.springboot.hello.dto.MemberDto;
+import com.springboot.hello.data.dto.MemberDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.reflect.Member;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 @RestController
