@@ -1,13 +1,19 @@
 package com.springboot.hello.data.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString(exclude = "name")
 @Table(name = "product")
-@Data
 public class Product {
 
     //DB에서 primaryKey와 매핑
@@ -29,3 +35,6 @@ public class Product {
 
     private LocalDateTime updatedAt;
 }
+
+
+
