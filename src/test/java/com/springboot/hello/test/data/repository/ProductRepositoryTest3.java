@@ -50,12 +50,12 @@ public class ProductRepositoryTest3 {
         Product savedProduct2 = productRepository.save(product2);
         Product savedProduct3 = productRepository.save(product3);
 
-        productRepository.findByName("펜", Sort.by(Order.asc("price")));
-        productRepository.findByName("펜", Sort.by(Order.asc("price"), Order.desc("Stock")));
-
-        System.out.println(productRepository.findByName("펜", getSort()));
-
-        Page<Product> productPage = productRepository.findByName("펜", PageRequest.of(0,2));
+//        productRepository.findByName("펜", Sort.by(Order.asc("price")));
+//        productRepository.findByName("펜", Sort.by(Order.asc("price"), Order.desc("Stock")));
+//
+//        System.out.println(productRepository.findByName("펜", getSort()));
+//
+//        Page<Product> productPage = productRepository.findByName("펜", PageRequest.of(0,2));
 
     }
 
